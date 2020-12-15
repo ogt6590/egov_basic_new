@@ -11,8 +11,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="<c:url value='/guest/guest.do'/>">GUEST</a>
-	<a href="<c:url value='/member/member.do'/>">MEMBER</a>
-	<a href="<c:url value='/admin/admin.do'/>">ADMIN</a>
+	<a href="<c:url value='/guest.do'/>">GUEST</a>
+	<a href="<c:url value='/member.do'/>">MEMBER</a>
+	<a href="<c:url value='/admin.do'/>">ADMIN</a>
 </body>
 </html>
