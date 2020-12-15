@@ -23,12 +23,12 @@
 			<h2 class="card-title text-center" style="color:#113366;">로그인 폼</h2>
 		</div>
 		<div class="card-body">
-      <form class="form-signin" method="POST" action="/login">
+      <form class="form-signin" method="POST" action="/egov/login.do">
         <h5 class="form-signin-heading">로그인 정보를 입력하세요</h5>
         <label for="inputEmail" class="sr-only">Your ID</label>
-        <input type="text" id="id" name="id" class="form-control" placeholder="Your ID" required autofocus><BR>
+        <input type="text"   name="Id" class="form-control" placeholder="Your ID" ><BR>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="pw" name="pw" class="form-control" placeholder="Password" required><br>
+        <input type="password"   name="Pwd" class="form-control" placeholder="Password" ><br>
    		<input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>
         <button id="btn-Yes" class="btn btn-lg btn-primary btn-block" type="submit">로 그 인</button>
       </form>

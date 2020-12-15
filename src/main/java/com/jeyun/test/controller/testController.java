@@ -3,8 +3,10 @@ package com.jeyun.test.controller;
 
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jeyun.test.service.testService;
@@ -23,6 +25,11 @@ public class testController {
 	
 		return "main/test";
 	}
+		
+	@RequestMapping("/suceess.do")
+	public void success() throws Exception {
+		System.out.println("로그인 인증 성공");
+	}
 	
 	@RequestMapping("/test.do")
 	public String test2() throws Exception {
@@ -33,22 +40,22 @@ public class testController {
 	@RequestMapping("/guest.do")
 	public String guest() throws Exception {
 		System.out.println("여기까지 왔다");
-		return "main/test";
+		return "main/guest";
 	}
 	
 	@RequestMapping("/member.do")
 	public String member() throws Exception {
 		System.out.println("여기까지 왔다");
-		return "main/test";
+		return "main/member";
 	}
 	
 	@RequestMapping("/admin.do")
 	public String admin() throws Exception {
 		System.out.println("여기까지 왔다");
-		return "main/test";
+		return "main/admin";
 	}
 	
-		@RequestMapping("/login.do")
+		@RequestMapping("/loginPage.do")
 		public String login() throws Exception {
 			System.out.println(" admin만허용 ");
 			return "main/login.tiles";

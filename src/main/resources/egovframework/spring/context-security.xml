@@ -11,7 +11,17 @@
     	<intercept-url pattern="/member.do" access="hasAnyRole('ROLE_MEMBER','ROLE_ADMIN')"/>
     	<intercept-url pattern="/admin.do" access="hasRole('ROLE_ADMIN')"/>
     	<intercept-url pattern="/**" access="permitAll"/>
+    	   	
+    	<form-login
+        	username-parameter="Id"
+        	password-parameter="Pwd"
+        	login-processing-url="/login.do"
+        	login-page="/loginPage.do"
+        	default-target-url="/suceess.do"        
+    	/>   	
 	</http>
+	
+
 
        
      <authentication-manager>
