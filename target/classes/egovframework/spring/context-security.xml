@@ -18,7 +18,11 @@
         	login-processing-url="/login.do"
         	login-page="/loginPage.do"
         	default-target-url="/suceess.do"        
-    	/>   	
+    	/>
+    	
+    	<access-denied-handler 
+    	error-page="/access_denied_page.do"/>
+
 	</http>
 	
 

@@ -19,10 +19,15 @@ public class testController {
 	testService service;
 	
 	
+	
+	@RequestMapping("/access_denied_page.do")
+	public String access_denied() throws Exception {						
+			return "main/access_denied_page";
+	}	
+		
 	@RequestMapping("/list.do")
 	public String test1() throws Exception {			
 		System.out.println(service.serviceTest().get(1).getID()+"첫번쨰값");
-	
 		return "main/test";
 	}
 		
