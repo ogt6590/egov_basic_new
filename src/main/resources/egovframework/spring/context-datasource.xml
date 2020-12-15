@@ -21,26 +21,17 @@
         <property name="password" value="1234"/>
     </bean>
     
-    <!-- sqlSessionFactory  
+    <!-- sqlSessionFactory -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:/egovframework/sqlmap/example/sql-mapper-config.xml" />
 		<property name="mapperLocations" value="classpath:/egovframework/sqlmap/example/mappers/*.xml" />
 	</bean>
-	-->
-		<!-- Mapper 인터페이스 스캔 및 Bean 등록 
+
+	<!-- Mapper 인터페이스 스캔 및 Bean 등록  -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.jeyun.test.*" />	
 	</bean>
-    -->
-    
-    <!-- oracle (POM에서 commons-dbcp, ojdbc(라이센스 사항으로 별도로 배포되지 않음) 관련 라이브러리 설정)
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:example" />
-        <property name="username" value="user"/>
-        <property name="password" value="password"/>
-    </bean>
-    -->
-    
+   
+        
 </beans>
