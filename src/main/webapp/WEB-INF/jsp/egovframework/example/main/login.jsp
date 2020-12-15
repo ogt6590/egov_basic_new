@@ -2,6 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <head>  
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,6 +30,14 @@
         <input type="text"   name="Id" class="form-control" placeholder="Your ID" ><BR>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password"   name="Pwd" class="form-control" placeholder="Password" ><br>
+        
+        <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+	    	<font color="red">
+	            	${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</p>
+	        		<c:remove var="SPRING_SECURITY_LAST_EXCEPTION" scope="session"/>
+	   		</font>
+		</c:if>
+		
    		<input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>
         <button id="btn-Yes" class="btn btn-lg btn-primary btn-block" type="submit">로 그 인</button>
       </form>
