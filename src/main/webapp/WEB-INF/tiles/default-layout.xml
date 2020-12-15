@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+ 
+<tiles-definitions>
+	<definition name="layouts-tiles" template="/WEB-INF/jsp/egovframework/example/cmmn/default-layouts.jsp">
+	  	<put-attribute name="tiles_header"  value="/WEB-INF/jsp/egovframework/example/cmmn/default-header.jsp" />
+	  	<put-attribute name="body"   value="" />
+	  	<put-attribute name="tiles_foot"   value="/WEB-INF/jsp/egovframework/example/cmmn/default-foot.jsp" />
+	</definition>
+	<!-- */*.tiles  로 호출되면  layouts-tiles 적용시키고  적용시킨게 test.jsp면  <tiles:insertAttribute name="body" />여기에 test.jsp 내용을 넣어라  -->
+	<definition name="*/*.tiles" extends="layouts-tiles">
+	  	<put-attribute name="body" value="/WEB-INF/jsp/egovframework/example/{1}/{2}.jsp" />
+	</definition>
+</tiles-definitions>
