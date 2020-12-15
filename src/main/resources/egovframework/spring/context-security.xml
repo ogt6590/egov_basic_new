@@ -20,6 +20,11 @@
         	default-target-url="/suceess.do"        
     	/>
     	
+    	<logout
+        	logout-url="/logout"
+        	logout-success-url="/loginPage.do"
+    	/>
+
     	<access-denied-handler 
     	error-page="/access_denied_page.do"/>
 
