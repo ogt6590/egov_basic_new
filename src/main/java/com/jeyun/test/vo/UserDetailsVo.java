@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @SuppressWarnings("serial")
 public class UserDetailsVo implements UserDetails {
 	
-	  private String ID;
+	  	private String ID;
 	    private String PASSWORD;
 	    private String AUTHORITY;
 	    private boolean ENABLED;

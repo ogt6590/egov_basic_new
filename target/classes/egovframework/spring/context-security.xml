@@ -33,14 +33,16 @@
     	error-page="/access_denied_page.do"/>
 
 	</http>
-	 
-	 	   
+			
+	<!-- 검증하는 userAuthProvider를 디비에서 데이터를 받아오는 userService 보다 먼저 선언해야 정상작동함 -->     	 	   	 	 	   
 	<authentication-manager>
+		<authentication-provider ref="userAuthProvider"/>
 	    <authentication-provider user-service-ref="userService">
 	    </authentication-provider>
 	</authentication-manager>
-        
+    
 	<beans:bean id="userService" class="com.jeyun.test.service.impl.UserDetailsServiceImpl"/>
+	<beans:bean id="userAuthProvider" class="com.jeyun.test.service.impl.AuthenticationProviderImpl"/>
 
-   
+
 </beans:beans>

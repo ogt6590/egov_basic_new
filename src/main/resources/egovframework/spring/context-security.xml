@@ -9,7 +9,6 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
       
      <context:component-scan base-package="com.jeyun.test.mapper"/>
-
       
      <http auto-config="true" use-expressions="true">
     	<intercept-url pattern="/member.do" access="hasAnyRole('ROLE_MEMBER','ROLE_ADMIN')"/>
@@ -33,14 +32,16 @@
     	error-page="/access_denied_page.do"/>
 
 	</http>
-	 
-	 	   
+			
+	<!-- 검증하는 userAuthProvider를 디비에서 데이터를 받아오는 userService 보다 먼저 선언해야 정상작동함 -->     	 	   	 	 	   
 	<authentication-manager>
+		<authentication-provider ref="userAuthProvider"/>
 	    <authentication-provider user-service-ref="userService">
 	    </authentication-provider>
 	</authentication-manager>
-        
+    
 	<beans:bean id="userService" class="com.jeyun.test.service.impl.UserDetailsServiceImpl"/>
+	<beans:bean id="userAuthProvider" class="com.jeyun.test.service.impl.AuthenticationProviderImpl"/>
 
-   
+
 </beans:beans>
